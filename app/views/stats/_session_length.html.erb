@@ -1,0 +1,13 @@
+<tr>
+  <th><%=content_tag :h6, type.titleize %></th>
+  <% mean = mobile_sessions.map(&:session_length).mean %>
+  <% median = mobile_sessions.map(&:session_length).median %>
+  <td><%= distance_of_time_in_words mean %>
+    <br>
+    <small>(specifically <%= mean %> seconds)</small>
+  </th>
+  <td><%= distance_of_time_in_words mobile_sessions.map(&:session_length).median %>
+<br>
+    <small>(specifically <%= median %> seconds)</small>
+  </td>
+</tr>

@@ -1,0 +1,132 @@
+@import url(http://fonts.googleapis.com/css?family=Pontano+Sans|Open+Sans+Condensed:300|Quicksand:300,400);
+@import 'partials/transition';
+@font-face {
+  font-family: 'ProximaNovaA-Regular';
+  font-weight:normal;
+  font-style:normal;
+  font-variant:normal;
+  src: image-url('/assets/221542_0_0.eot');
+  src: local('☺'), image-url('/assets/221542_0_0.eot?#iefix') format('embedded-opentype'),image-url('/assets/221542_0_0.woff') format('woff'),image-url('/assets/221542_0_0.ttf') format('truetype');
+}
+ 
+  
+@font-face {
+  font-family: 'ProximaNovaS-Regular';
+  src: image-url('/assets/221542_1_0.eot');
+  font-weight:normal;
+  font-style:normal;
+  font-variant:normal;
+  src: local('☺'), image-url('/assets/221542_1_0.eot?#iefix') format('embedded-opentype'),image-url('/assets/221542_1_0.woff') format('woff'),image-url('/assets/221542_1_0.ttf') format('truetype');
+}
+ 
+  
+@font-face {
+  font-family: 'ProximaNova-Regular';
+  font-weight:normal;
+  font-style:normal;
+  font-variant:normal;
+  src: image-url('/assets/221542_2_0.eot');
+  src: local('☺'), image-url('/assets/221542_2_0.eot?#iefix') format('embedded-opentype'),image-url('/assets/221542_2_0.woff') format('woff'),image-url('/assets/221542_2_0.ttf') format('truetype');
+}
+
+body, h1, h2, h3, h4, h5, h6, p, pre, code, span, a, blockquote {
+	font-family: "ProximaNova-Regular";
+  font-weight: 400;
+}
+
+/*
+  960 Grid System ~ Text CSS.
+  Learn more ~ http://960.gs/
+
+  Licensed under GPL and MIT.
+*/
+
+/* `Basic HTML
+----------------------------------------------------------------------------------------------------*/
+
+body {
+  font: 14px/1.5 "ProximaNova-Regular", 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+}
+
+pre,
+code {
+  font-family: 'Pontano Sans', Menlo, Consolas, monospace;
+}
+
+hr {
+  border: 0 #ccc solid;
+  border-top-width: 1px;
+  clear: both;
+  height: 0;
+}
+
+/* `Headings
+----------------------------------------------------------------------------------------------------*/
+h1,h2,h3,h4,h5,h6 {
+  font-family:'ProximaNovaA-Regular';
+}
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 23px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+h4 {
+  font-size: 19px;
+}
+
+h5 {
+  font-size: 17px;
+}
+
+h6 {
+  font-size: 15px;
+}
+
+/* `Spacing
+----------------------------------------------------------------------------------------------------*/
+
+ol {
+  list-style: decimal;
+}
+
+ul {
+  list-style: disc;
+}
+
+li {
+  margin-left: 30px;
+}
+
+p,
+dl,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+pre,
+table,
+address,
+fieldset,
+figure {
+  margin-bottom: 20px;
+}
+a {
+  @include transition(all, 0.1s,0s);
+  text-decoration:none;
+  color: #08c;
+  &:hover {
+    color: darken(#08c, 5%);
+  }
+}
