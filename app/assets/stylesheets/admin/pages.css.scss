@@ -1,0 +1,79 @@
+@import 'partials/transition';
+@mixin svg_title {
+  text-align:center;
+  h6 {
+    font-weight: 400;
+    a {
+      display:inline-block;
+      padding-left: 10px;
+    }
+  }
+}
+.chart {
+  &> .buttons {
+    height: 20px;
+  }
+}
+.brush {
+  .extent, .background {
+    height: 100px;
+    //stroke: #fff;
+    fill: #888;
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
+  }
+  .extent {
+    stroke: #ddd;
+    stroke-opacity: 0.8;
+    stroke-width:2px;
+  }
+}
+
+.pie-slice {
+  path {
+    @include transition(all, 0.4s,0s);
+  }
+  .deselected {
+    fill-opacity: 0.5;
+    stroke-opacity: 0.5;
+  }
+  .selected {
+    fill-opacity:1;
+    stroke-opacity: 1;
+  }
+}
+.domain, line.tick {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+path.line {
+  fill: none;
+  stroke-width:2px;
+  stroke: #a05b3b;
+  //shape-rendering: crispEdges;
+}
+line.tick {
+  stroke: #999;
+}
+.axis text {
+  font-size: 10px;
+  font-family: 'ProximaNovaA-Regular';
+}
+.resize path {
+  fill: #777;
+  stroke: white;
+  stroke-width: 1px;
+  fill-opacity: 0.6;
+}
+.axis.y {
+  text {
+    fill: #666;
+    transform: 'rotate(-30)';
+  }
+}
+
+path.area {
+  fill: #ddd;
+  fill-opacity: 0.6;
+}

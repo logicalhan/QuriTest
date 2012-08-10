@@ -1,3 +1,20 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#main-header {
+  height: 50px;
+  width: 100%;
+  background-color: #44514A;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0; 
+  img {
+    position:fixed;
+    top: 10px;
+    left:75px;
+    color: white;
+  }
+}
+
+#main-container {
+  position:relative;
+  margin-top: 60px;
+}

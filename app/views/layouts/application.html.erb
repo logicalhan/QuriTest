@@ -5,10 +5,23 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  
 </head>
 <body>
+<div class='container_12'>
+  <header id='main-header'><%= image_tag "quri_logo.png" %></header>
+</div>
+<div class="clear"></div>
+<div class='container_12' id='main-container'>
+  <%= yield %>
+</div>
 
-<%= yield %>
+<script type="text/javascript">
+  hljs.tabReplace = '    '; // 4 spaces
+  // ... or
+  hljs.tabReplace = '<span class="indent">\t</span>';
 
+  hljs.initHighlightingOnLoad();
+</script>
 </body>
 </html>

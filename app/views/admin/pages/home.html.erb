@@ -1,0 +1,50 @@
+<div class='grid_6'>
+  <header><h4>Of all sessions</h4></header>
+  <table class='table percentages'>
+    <%= render partial: "stats/percentage", locals: {stats: @stats, options: {filter: 'finished'}} %>
+     <%= render partial: "stats/percentage", locals: {stats: @stats, options: {filter: 'canceled'}} %>
+  </table>
+  <div class='vis'>
+    <div id='status-pie' class="chart">
+
+      
+    </div>
+  </div>
+  <div class="clear"></div>
+  <header><h4>Of canceled sessions</h4></header>
+  <table class='table percentages'>
+    <%= render partial: "stats/percentage", locals: {stats: @stats, options: {filter: 'canceled', optional_filter: 'start'}} %>
+    <%= render partial: "stats/percentage", locals: {stats: @stats, options: {filter: 'canceled', optional_filter: 'check1'}} %>
+    <%= render partial: "stats/percentage", locals: {stats: @stats, options: {filter: 'canceled', optional_filter: 'check2'}} %>
+  </table>
+
+</div>
+<div class='grid_6'>
+  <header><h4>Ratio of Finished to Canceled</h4></header>
+  <table class='table mean_and_medians'>
+    <tr>
+      <th></th>
+      <th>Mean</th>
+      <th>Median</th>
+    </tr>
+    <%= render partial: "stats/session_length", locals: {mobile_sessions: MobileSession.finished, type: "Finished"} %>
+    <%= render partial: "stats/session_length", locals: {mobile_sessions: MobileSession.canceled, type: "Canceled (total)"} %>
+    <%= render partial: "stats/session_length", locals: {mobile_sessions: MobileSession.canceled_by('start'), type: "Canceled by Start"} %>
+    <%= render partial: "stats/session_length", locals: {mobile_sessions: MobileSession.canceled_by('check1'), type: "Canceled by Check1"} %>
+    <%= render partial: "stats/session_length", locals: {mobile_sessions: MobileSession.canceled_by('check2'), type: "Canceled by Check2"} %>
+  </table>
+</div>
+<div class="clear"></div>
+<div class='grid_12'>
+  <div class='vis'>
+    <div id='bar-chart' class="chart">
+      <a class="reset" href="javascript:sessionBarChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+      <span class="reset" style="display: none;">Current filter: <span class="filter"></span>
+      </span>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+
+
+</script>

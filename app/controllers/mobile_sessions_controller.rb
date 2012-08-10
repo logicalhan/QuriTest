@@ -7,4 +7,11 @@ class MobileSessionsController < ApplicationController
     new_mobile_session = MobileSession.create_initial_session_with_event(params[:event])
     render json: new_mobile_session.id.to_json
   end
+  def index
+    @mobile_sessions = MobileSession.order(:id).map(&:session_json)
+
+    respond_to do |f|
+      f.json {render json: @mobile_sessions.to_json}
+    end
+  end
 end
