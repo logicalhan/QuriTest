@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.7'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -9,6 +9,7 @@ group :assets do
   gem 'jquery-rails'
   gem 'd3_rails'
   gem 'crossfilter_rails'
+  gem 'tipsy_svg'
 
 end
 

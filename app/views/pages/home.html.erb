@@ -1,2 +1,26 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class='grid_12'>
+  <h6>Testing the API with javascript console</h6>
+  <p>In order to test the api, you can open javascript console (which for me seems to be command control j for chrome, but I have swapped some keys so that may not work for you) on this page.</p>
+  <p>In the console, you can initiate a mobile session via the following command: </p>
+  <pre>  <code class='javascript'> $.post('/mobile_sessions', 
+           {event: {latitude: 10.2, longitude: 10.2, event_type: 'start', timestamp: 0.0}}, 
+           function(d) { console.log(d); }) // this will return the id via json
+  </code></pre>
+  <p>You may, once a session has 'started', continue the session using the id recieved like so: </p>
+  <pre>  <code class='javascript'> $.post('/mobile_sessions/:id/mobile_events', 
+           {event: {latitude: 10.2, longitude: 10.2, event_type: 'check1', timestamp: 0.0}}, 
+           function(d) { console.log(d); })
+  </code></pre>
+  <p>You will receive a json object which notifies you if your request was successful or if there was an error in processing due to an improper sequence.</p>
+
+  <hr />
+  <h6>Seeding the Database</h6>
+  <p>There is a rake task to seed the database with data</p>
+  <pre><code class='ruby'>
+    rake db:reset
+    # or 
+    rake db:seed
+  </code></pre>
+  <p>You may access the <%= link_to "administration section via this link",  admin_root_path %></p> 
+
+</div>
