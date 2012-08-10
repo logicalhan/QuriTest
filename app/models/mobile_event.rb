@@ -20,19 +20,6 @@ class MobileEvent < ActiveRecord::Base
 
   after_save :session_completeness_check
 
-  def json_version
-    event_hash = {}
-    event_hash[:session] = mobile_session_id
-    event_hash[:session_status] = mobile_session.status
-    event_hash[:event_type] = event_type
-    event_hash[:timestamp] = timestamp
-    event_hash[:latitude] = latitude
-    event_hash[:longitude] = longitude
-    event_hash[:session_length]=mobile_session.session_length
-    return event_hash
-  end
-
-
   private
   def session_completeness_check
     if ["finish", "cancel"].include? self.event_type
