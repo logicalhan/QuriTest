@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+# 25.times do |i|
+#   random_latitude = Random.rand(1000)/10
+#   random_longitude = Random.rand(1000)/10
+#   MobileSession.create({latitude: random_latitude, longitude: random_longitude, event_type: })
